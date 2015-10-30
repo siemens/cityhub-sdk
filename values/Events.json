@@ -1,0 +1,18 @@
+{
+"values": [
+{"dayOfWeek": 0, "time": "00:00:00", "value": ""},
+{"dayOfWeek": 0, "time": "12:00:00", "value": "Market"},
+{"dayOfWeek": 1, "time": "00:00:00", "value": "Trade fair"},
+{"dayOfWeek": 1, "time": "12:00:00", "value": "Trade fair"},
+{"dayOfWeek": 2, "time": "00:00:00", "value": "Trade fair"},
+{"dayOfWeek": 2, "time": "12:00:00", "value": "Market"},
+{"dayOfWeek": 3, "time": "00:00:00", "value": "Trade fair"},
+{"dayOfWeek": 3, "time": "12:00:00", "value": "Trade fair; Concert"},
+{"dayOfWeek": 4, "time": "00:00:00", "value": "Market"},
+{"dayOfWeek": 4, "time": "12:00:00", "value": "Concert"},
+{"dayOfWeek": 5, "time": "00:00:00", "value": "Trade fair"},
+{"dayOfWeek": 5, "time": "12:00:00", "value": "Arts exposition"},
+{"dayOfWeek": 6, "time": "00:00:00", "value": "Concert"},
+{"dayOfWeek": 6, "time": "12:00:00", "value": "Trade fair"}
+]
+}

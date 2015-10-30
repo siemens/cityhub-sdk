@@ -1,0 +1,36 @@
+Copyright (c) 2015, Siemens AG
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or
+other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+----------------------------------------------------------------------------------------------------------------------
+
+To avoid big license headers in small source files the Unique License Identifiers as defined by the Linux Foundation's SPDX project [1]
+(AKA SPDX Identifiers) are used in this project.
+ 
+The corresponding license texts can be found in a file which filename is the Unique License Identifier with the extension txt, low-case.
+For example, the text of the so-called "2-Clause simplified BSD" license will be found in a file called "bsd-2-clause.txt" either at the
+top-directory or in a directory called "licenses". The license that applies to each file will be specified this form in the header of each file:
+ 
+SPDX-License-Identifier: BSD-2-clause
+ 
+We use the SPDX Unique License Identifiers here; these are available at [2].
+ 
+[1] http://spdx.org/
+[2] http://spdx.org/licenses/
+ 
+Full name                                       SPDX Identifier OSI Approved    File name               URI
+=======================================================================================================================================
+BSD 2-Clause License                            BSD-2-Clause    Y               bsd-2-clause.txt        http://spdx.org/licenses/BSD-2-Clause

@@ -1,0 +1,28 @@
+{
+  "name": "cityhub-sdk",
+  "version": "0.1.0",
+  "dependencies": {
+    "angular": "~1.4.7",
+    "json3": "~3.3.2",
+    "es5-shim": "~3.0.2",
+    "jquery": "~1.11.3",
+    "bootstrap": "~3.3.5",
+    "angular-resource": "~1.4.7",
+    "angular-cookies": "~1.4.7",
+    "angular-sanitize": "~1.4.7",
+    "angular-bootstrap": "~0.13.4",
+    "angular-socket-io": "~0.7.0",
+    "font-awesome": "~4.4.0",
+    "lodash": "~2.4.2",
+    "angular-ui-router": "~0.2.15",
+    "angular-notify": "~2.5.0",
+    "paho-mqtt-js": "~1.0.1"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.7",
+    "angular-scenario": "~1.4.7"
+  },
+  "resolutions": {
+    "angular": "~1.4.7"
+  }
+}

@@ -1,0 +1,200 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<header class="hero-unit" id="banner">
+    <div class="container">
+        <h1>City Hub SDK</h1>
+
+        <p class="lead">Emulate, extend and integrate City Hub Sensors in your application.</p>
+    </div>
+</header>
+
+<div class="container">
+    <div>
+        &nbsp;
+    </div>
+    <div class="row">
+        <div class="col-lg-12  text-center">
+            <span class="actions">
+              <button type="button" class="btn btn-primary" ng-click="loadConfig()">
+                  <span class="glyphicon glyphicon-refresh"></span> Refresh
+              </button>
+              <button type="button" class="btn btn-warning" ng-click="resetConfig()">
+                  <span class="glyphicon glyphicon-refresh"></span> Reset to Default
+              </button>
+            </span>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Sample Devices
+            </h1>
+            <accordion close-others="true">
+                <accordion-group ng-repeat="device in devices | orderBy:id">
+                    <accordion-heading>
+                        <a href="#" tooltip="{{device.info}}">{{device.id}}<i class="pull-left fa"
+                                                                              ng-class="{'fa-chevron-down': status.open, 'fa-chevron-right': !status.open}"></i></a>
+                        <button type="button" class="pull-right btn btn-xs btn-danger glyphicon glyphicon-trash"
+                                ng-click="deleteDevice(device); $event.preventDefault(); $event.stopPropagation();"
+                                tooltip="Delete"></button>
+                    </accordion-heading>
+                    <form name="{{device.id}}" class="form-horizontal" role="form">
+                        <h3>Device</h3>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Info</label>
+
+                            <div class="col-sm-10">
+                                <input type="text" ng-model="device.info" class="form-control"
+                                       placeholder="Device info here"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" tooltip="Coordinates">Latitude <a
+                                    ng-href="http://www.openstreetmap.org/?mlat={{device.latitude}}&mlon={{device.longitude}}&zoom=15"
+                                    target="_blank"><span
+                                    class="btn-link glyphicon glyphicon-map-marker"></span></a></label>
+
+                            <div class="col-sm-10">
+                                <input type="number" ng-model="device.latitude" class="form-control"
+                                       placeholder="GPS latitude"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" tooltip="Coordinates">Longitude <a
+                                    ng-href="http://www.openstreetmap.org/?mlat={{device.latitude}}&mlon={{device.longitude}}&zoom=15"
+                                    target="_blank"><span
+                                    class="btn-link glyphicon glyphicon-map-marker"></span></a></label>
+
+                            <div class="col-sm-10">
+                                <input type="number" ng-model="device.longitude" class="form-control"
+                                       placeholder="GPS longitude"/>
+                            </div>
+                        </div>
+                        <div>
+                            <h3>Sensors</h3>
+
+                            <div class="form-group" ng-repeat="sensor in device.sensors | orderBy:orderByIndexFunction">
+                                <label label-for="{{sensor.id}}" class="col-sm-2 control-label"
+                                       tooltip="{{sensor.info}}">{{sensor.id}}<span
+                                        ng-if="sensor.minValue || sensor.maxValue"><BR/><small>
+                                    [{{sensor.minValue}},{{sensor.maxValue}}]
+                                </small></span></label>
+
+                                <div class="col-sm-7">
+                                  <span ng-if="sensor.minValue || sensor.maxValue">
+                                    <!-- number value sensors -->
+                                    <input ng-class="{warn: !{{device.id}}.{{sensor.id}}.$valid}" name="{{sensor.id}}" type="number"
+                                           min="{{sensor.minValue}}" max="{{sensor.maxValue}}" required ng-model="sensor.value"
+                                           class="form-control" placeholder="Sensor value: {{sensor.info}}"
+                                           ng-keyup="$event.keyCode == 13 && saveSensor(device, sensor)"/>
+                                  </span>
+                                  <span ng-if="!sensor.minValue && !sensor.maxValue">
+                                    <!-- string value sensors -->
+                                    <input name="{{sensor.id}}" type="string" required ng-model="sensor.value" class="form-control"
+                                           placeholder="Sensor value: {{sensor.info}}"
+                                           ng-keyup="$event.keyCode == 13 && saveSensor(device, sensor)"/>
+                                  </span>
+                                </div>
+                                <div class="col-sm-3">
+                                    <button type="button" class="btn btn-sm btn-primary glyphicon glyphicon-save"
+                                            ng-click="saveSensor(device, sensor)" tooltip="Save"></button>
+                                    <button ng-if="sensor.type !== 'string'" type="button"
+                                            class="btn btn-sm btn-primary glyphicon glyphicon-minus"
+                                            ng-click="decreaseSensor(device, sensor)" tooltip="Decrease"></button>
+                                    <button ng-if="sensor.type !== 'string'" type="button"
+                                            class="btn btn-sm btn-primary glyphicon glyphicon-plus"
+                                            ng-click="increaseSensor(device, sensor)" tooltip="Increase"></button>
+                                    <button type="button" class="btn btn-sm btn-warning glyphicon glyphicon-refresh"
+                                            ng-click="resetSensor(device, sensor)" tooltip="Reset"></button>
+                                    <button type="button" class="btn btn-sm btn-danger glyphicon glyphicon-trash"
+                                            ng-click="deleteSensor(device, sensor)" tooltip="Delete"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="actions text-right">
+                            <button type="button" class="btn btn-primary" ng-click="saveDevice(device)">
+                                <span class="glyphicon glyphicon-save"></span> Save
+                            </button>
+                            <button type="button" class="btn btn-warning" ng-click="resetDevice(device)">
+                                <span class="glyphicon glyphicon-refresh"></span> Reset
+                            </button>
+                        </p>
+                    </form>
+                </accordion-group>
+            </accordion>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Sample Users
+            </h1>
+            <accordion close-others="true">
+                <accordion-group ng-repeat="user in users | orderBy:id">
+                    <accordion-heading>
+                        <a href="#" tooltip="{{user.info}}">{{user.id}}<i class="pull-left fa"
+                                                                          ng-class="{'fa-chevron-down': status.open, 'fa-chevron-right': !status.open}"></i></a>
+                        <button type="button" class="pull-right btn btn-xs btn-danger glyphicon glyphicon-trash"
+                                ng-click="deleteUser(user); $event.preventDefault(); $event.stopPropagation();"
+                                tooltip="Delete"></button>
+                    </accordion-heading>
+                    <form name="{{user.id}}" class="form-horizontal" role="form">
+                        <h3>User</h3>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">ID</label>
+
+                            <div class="col-sm-10">
+                                <input type="text" readonly ng-model="user.id" class="form-control" placeholder="User ID here"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Password</label>
+
+                            <div class="col-sm-10">
+                                <input type="text" ng-model="user.password" class="form-control"
+                                       placeholder="User password here"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">E-Mail</label>
+
+                            <div class="col-sm-10">
+                                <input type="text" ng-model="user.email" class="form-control"
+                                       placeholder="User e-mail here"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Info</label>
+
+                            <div class="col-sm-10">
+                                <input type="text" ng-model="user.info" class="form-control"
+                                       placeholder="User info here"/>
+                            </div>
+                        </div>
+                        <p class="actions text-right">
+                            <button type="button" class="btn btn-primary" ng-click="saveUser(user)">
+                                <span class="glyphicon glyphicon-save"></span> Save
+                            </button>
+                            <button type="button" class="btn btn-warning" ng-click="resetUser(user)">
+                                <span class="glyphicon glyphicon-refresh"></span> Reset
+                            </button>
+                        </p>
+                    </form>
+                </accordion-group>
+            </accordion>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p>City Hub SDK v0.1</p>
+    </div>
+</footer>

@@ -1,0 +1,58 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="page-header">
+                City Hub REST API
+            </h1>
+
+            <h3 class="page-header">
+                Request Templates
+            </h3>
+
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Request <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li ng-repeat="api in apis" role="{{api.separator ? 'separator' : ''}}" ng-class="{divider: api.separator}"><a ng-click="copy(api)" ng-if="!api.separator" tooltip="{{api.description}}" tooltip-placement="right">{{api.httpMethod}} {{api.sampleRequest.path}}</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <h3 class="page-header">
+                Test
+            </h3>
+            <div>
+                <div><span style="font-weight: bold;">Method:</span>
+                    <select ng-model="requestMethod">
+                        <option value="GET">GET</option>
+                        <option value="POST">POST</option>
+                        <option value="DELETE">DELETE</option>
+                        <option value="PUT">PUT</option>
+                    </select>
+                    <button class="btn btn-xs btn-primary" ng-click="execute()" value="Send" tooltip="Send the request"><i class="fa fa-flash"></i> Send</button>
+                </div>
+                <div>
+                    <span style="font-weight: bold;">Path:</span><br/>
+                    <textarea rows="1"  style="width: 100%;" ng-model="requestPath"></textarea>
+                </div>
+            </div>
+            <br/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <span style="font-weight: bold;">Request body</span><br/>
+            <textarea rows="15" style="width: 100%;" ng-model="requestBody"></textarea>
+        </div>
+        <div class="col-sm-6">
+            <span style="font-weight: bold;">Response</span> (Status: {{responseStatus}})<br/>
+            <div>
+                <textarea rows="15" style="width: 100%;">{{response}}</textarea>
+            </div>
+        </div>
+    </div>
+</div>

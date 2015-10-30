@@ -1,0 +1,93 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1 class="page-header">
+        MQTT Pub/Sub Middleware
+      </h1>
+
+      <div>
+        <span style="font-weight: bold">Status: </span><span style="font-style: italic" ng-class="{warning: !isConnected}">{{status}}</span>
+      </div>
+
+      <h3 class="page-header">
+        Subscriptions
+      </h3>
+
+      <table class="table table-striped" style="font-size: medium">
+        <colgroup span="2"></colgroup>
+        <tbody>
+        <tr ng-repeat="subscription in subscriptions">
+          <td>{{subscription}}</td>
+          <td><button class="btn btn-sm btn-danger pull-right" ng-click="unsubscribe(subscription)" value="Unsubscribe">&times;</button></td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h3 class="page-header">
+        Subscribe
+      </h3>
+
+      <form class="form-horizontal" role="form">
+        <div class="form-group">
+          <label for="topic" class="col-sm-2 control-label">Topic</label>
+          <div class="col-sm-8">
+            <input type="text" ng-model="subscriptionTopic" class="form-control" id="topic" placeholder="Topic"/>
+          </div>
+          <div class="col-sm-2">
+            <button class="btn btn-primary" ng-click="subscribe(subscriptionTopic)" value="Subscribe">Subscribe</button>
+          </div>
+        </div>
+      </form>
+
+      <!--
+      <h3 class="page-header">
+        Publish
+      </h3>
+
+      <form class="form-horizontal" role="form">
+        <div class="form-group">
+          <div class="form-group">
+            <label for="messageTopic" class="col-sm-2 control-label">Topic</label>
+            <div class="col-sm-3">
+              <input type="text" ng-model="messageTopic" class="form-control" id="messageTopic" placeholder="cityhub/ch1/Temperature"/>
+            </div>
+            <label for="message" class="col-sm-2 control-label">Message</label>
+            <div class="col-sm-3">
+              <input type="text" ng-model="message" class="form-control" id="message" placeholder="{'value': 10}"/>
+            </div>
+            <div class="col-sm-2">
+              <button class="btn btn-primary" ng-click="publish(messageTopic, message)" value="Publish">Publish</button>
+            </div>
+          </div>
+        </div>
+      </form>
+      -->
+
+      <br/>
+      <br/>
+      <h3 class="page-header" style="display:inline">
+        Notifications <small>(#{{msgs.length}})</small>
+      </h3>
+      &nbsp;<span class="glyphicon"><input type="text" class="form-control" style="font-family: sans-serif" ng-model="searchText"><span class="glyphicon glyphicon-remove-circle searchClear" ng-click="searchText=''"></span></span>
+      &nbsp;&nbsp;<button class="btn btn-danger" ng-click="clearMessages()" value="Clear"><i class="fa fa-trash"></i> Clear Notifications</button>
+
+      <table class="table table-striped" style="font-size: medium">
+        <colgroup span="3"></colgroup>
+        <tbody>
+        <tr>
+          <th colspan="1">Arrival Time (GMT)</th>
+          <th colspan="1">Topic</th>
+          <th colspan="1">Message</th>
+        </tr>
+        <tr ng-repeat="msg in msgs.slice().reverse() | filter:searchText">
+          <td>{{msg.timestamp}}</td>
+          <td style="font-weight: bold;">{{msg.topic}}</td>
+          <td>{{msg.message}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
