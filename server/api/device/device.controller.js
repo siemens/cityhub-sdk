@@ -97,7 +97,7 @@ exports.setDevice = function(req, res) {
         uploadedSensor.timestamp = timestamp;
 
         // check sensor value range
-        if (sensor.type === 'float' || sensor.type === 'integer') {
+        if (sensor.type === 'float' || sensor.type === 'int') {
           //console.log('checking value range of ' + deviceId + '/' + uploadedSensor.id + '=' + uploadedSensor.value + '...');
           var val = checkValueRange(uploadedSensor.value, sensor.minValue, sensor.maxValue);
           if (typeof(val) === 'string') {
@@ -196,7 +196,7 @@ exports.setSensor = function(req, res) {
     return res.status(400).send('sensor value missing');
   }
 
-  if (device.sensors[sensorIndex].type === 'float' || device.sensors[sensorIndex].type === 'integer') {
+  if (device.sensors[sensorIndex].type === 'float' || device.sensors[sensorIndex].type === 'int') {
     var val = checkValueRange(uploadedSensor.value, device.sensors[sensorIndex].minValue, device.sensors[sensorIndex].maxValue);
     if (typeof(val) === 'string') {
       // value out of range
@@ -249,7 +249,7 @@ exports.increaseSensor = function(req, res) {
     return res.status(400).send('increase/decrease sensor value not supported for value type string');
   }
   uploadedSensor.value = device.sensors[sensorIndex].value + 1;
-  if (device.sensors[sensorIndex].type === 'float' || device.sensors[sensorIndex].type === 'integer') {
+  if (device.sensors[sensorIndex].type === 'float' || device.sensors[sensorIndex].type === 'int') {
     var val = checkValueRange(uploadedSensor.value, device.sensors[sensorIndex].minValue, device.sensors[sensorIndex].maxValue);
     if (typeof(val) === 'string') {
       // value out of range
@@ -303,7 +303,7 @@ exports.decreaseSensor = function(req, res) {
   // check sensor value range
   uploadedSensor.value = device.sensors[sensorIndex].value - 1;
   console.log('decreased sensor ' + deviceId + '/' + sensorId + '=', uploadedSensor);
-  if (device.sensors[sensorIndex].type === 'float' || device.sensors[sensorIndex].type === 'integer') {
+  if (device.sensors[sensorIndex].type === 'float' || device.sensors[sensorIndex].type === 'int') {
     var val = checkValueRange(uploadedSensor.value, device.sensors[sensorIndex].minValue, device.sensors[sensorIndex].maxValue);
     if (typeof(val) === 'string') {
       // value out of range

@@ -23,15 +23,15 @@ var devices = [
     {id: 'ch10', info: 'Fröttmaning - Soccer Arena, Munich', latitude: 48.2131391, longitude: 11.616277}];
 
 var sensors = [
-    {id: 'AvailableParkingSpaces', index: 1, info: 'Number of available parking spaces in the area, 0-500', type: 'integer', isBookable: true, pricePerHour: 1, minValue: 0, maxValue: 500, value: 10, timestamp: '1970-01-01T00:00:00.000Z'},
-    {id: 'AvailableBikes', index: 2, info: 'Number of available bikes for rent in the area, 0-20', type: 'integer', isBookable: true, pricePerHour: 5, minValue: 0, maxValue: 20, value: 5, timestamp: '1970-01-01T00:00:00.000Z'},
+    {id: 'AvailableParkingSpaces', index: 1, info: 'Number of available parking spaces in the area, 0-500', type: 'int', isBookable: true, pricePerHour: 1, minValue: 0, maxValue: 500, value: 10, timestamp: '1970-01-01T00:00:00.000Z'},
+    {id: 'AvailableBikes', index: 2, info: 'Number of available bikes for rent in the area, 0-20', type: 'int', isBookable: true, pricePerHour: 5, minValue: 0, maxValue: 20, value: 5, timestamp: '1970-01-01T00:00:00.000Z'},
     {id: 'Temperature', index: 3, info: 'Temperature sensor, -150 - +150 Celsius/Fahrenheit', type: 'float', minValue: -150.0, maxValue: 150.0, value: 20.0, timestamp: '1970-01-01T00:00:00.000Z'},
     {id: 'Humidity', index: 4, info: 'Atmospheric relative humidity sensor, 10 - 95% RH', type: 'float', minValue: 10.0, maxValue: 95.0, value: 40.0, timestamp: '1970-01-01T00:00:00.000Z'},
     {id: 'UVB', index: 5, info: 'Ultraviolet light sensor that responds primarily to UVB radiation, 290-320 nm', type: 'float', minValue: 290.0, maxValue: 320.0, value: 300.0, timestamp: '1970-01-01T00:00:00.000Z'},
     {id: 'AmbientNoise', index: 6, info: 'Ambient noise sensor in Decibels 0-200 dBA', type: 'float', minValue: 0.0, maxValue: 200.0, value: 100.0, timestamp: '1970-01-01T00:00:00.000Z'},
-    {id: 'CarbonDioxide', index: 7, info: 'Carbon Dioxide Sensor, 0-2000ppm', type: 'integer', minValue: 0, maxValue: 2000, value: 500, timestamp: '1970-01-01T00:00:00.000Z'},
-    {id: 'PersonProximity', index: 8, info: '(Person) proximity sensor based e.g. on ultra-sound sensor, 0-800cm', type: 'integer', minValue: 0, maxValue: 800, value: 800, timestamp: '1970-01-01T00:00:00.000Z'},
-    {id: 'TrafficDensity', index: 9, info: 'Normalized traffic density, 0-100', type: 'integer', minValue: 0, maxValue: 100, value: 50, timestamp: '1970-01-01T00:00:00.000Z'},
+    {id: 'CarbonDioxide', index: 7, info: 'Carbon Dioxide Sensor, 0-2000ppm', type: 'int', minValue: 0, maxValue: 2000, value: 500, timestamp: '1970-01-01T00:00:00.000Z'},
+    {id: 'PersonProximity', index: 8, info: '(Person) proximity sensor based e.g. on ultra-sound sensor, 0-800cm', type: 'int', minValue: 0, maxValue: 800, value: 800, timestamp: '1970-01-01T00:00:00.000Z'},
+    {id: 'TrafficDensity', index: 9, info: 'Normalized traffic density, 0-100', type: 'int', minValue: 0, maxValue: 100, value: 50, timestamp: '1970-01-01T00:00:00.000Z'},
     {id: 'Events', index: 10, info: 'Current events in the area', type: 'string', value: 'Market,Concert', timestamp: '1970-01-01T00:00:00.000Z'}];
 
 var currentSensorDevices;

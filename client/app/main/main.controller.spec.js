@@ -25,8 +25,8 @@ describe('Controller: MainCtrl', function() {
       {index: 2, name: 'Humidity', info: 'Atmospheric relative humidity sensor, 10 - 95% RH', type: 'float', value: 0.0, minValue: 10.0, maxValue: 95.0},
       {index: 3, name: 'UVB', info: 'Ultraviolet light sensor that responds primarily to UVB radiation, 290-320 nm', type: 'float', value: 0.0, minValue: 290.0, maxValue: 320.0},
       {index: 4, name: 'AmbientNoise', info: 'Ambient noise sensor in Decibels 0-200 dBA', type: 'float', value: 0.0, minValue: 0.0, maxValue: 200.0},
-      {index: 5, name: 'CarbonDioxide', info: 'Carbon Dioxide Sensor, 0-2000ppm', type: 'integer', value: 0, minValue: 0, maxValue: 2000},
-      {index: 6, name: 'Proximity', info: 'Proximity sensor based e.g. on ultra-sound sensor, 0-800cm', type: 'integer', value: 0, minValue: 0, maxValue: 800}
+      {index: 5, name: 'CarbonDioxide', info: 'Carbon Dioxide Sensor, 0-2000ppm', type: 'int', value: 0, minValue: 0, maxValue: 2000},
+      {index: 6, name: 'Proximity', info: 'Proximity sensor based e.g. on ultra-sound sensor, 0-800cm', type: 'int', value: 0, minValue: 0, maxValue: 800}
       ]);
     $httpBackend.expectGET('/api/users')
       .respond([{id: 'user1', email: 'user1@mail.com', password: 'user1.pass', info: 'test user'},
