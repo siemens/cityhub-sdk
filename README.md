@@ -1,5 +1,5 @@
 # City Hub SDK
-##### Date: Oct 2015, Authors: MR, TA
+##### Date: November 2015, Authors: MR, TA
 The City Hub SDK provides an emulation environment for the City Hub devices and their sensors (available parking spaces, available bikes (bike-sharing), temperature, humidity, ambient noise, traffic density, etc). Sensor values are be basically set through REST APIs. Sensor values can be queried through REST APIs (sample web application provided), or directly acquired through a pub/sub middleware (MQTT topics). Moreover, this SDK provides a sample transaction API for booking parking spaces and bikes.
 
 This SDK provides:
@@ -81,3 +81,14 @@ Start the Application
   ```
      node cli/sensor.js --help
   ```
+
+# Project / Source Code Structure
+Overview of the project structure
+---------------------------------
+| Path           | Contents |
+|----------------|----------|
+| . | README.md, LICENSE.txt, installation/helper scripts, etc. |
+| ./server | Node.js web application server |
+| ./client | HTML5 / JavaScript web client (based on AngularJS) |
+| ./cli | Command line application for setting sensor values (through REST APIs), either single values or values scheduled via day-of-the-week-based timestamps |
+| ./values | JSON files containing sample/forecast values for sensors (array of {dayOfWeek: 0-6, time: 0-24:0-59:0-59, value: 1234}) |
