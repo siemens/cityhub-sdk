@@ -7,6 +7,11 @@
     "type": "git",
     "url": "git://github.com/siemens/cityhub-sdk.git"
   },
+  "engines": {
+    "node": ">=0.12.7 <4.0.0",
+    "npm": ">=2.11.3 <3.0.0",
+    "supertest": "~0.11.0"
+  },
   "dependencies": {
     "body-parser": "~1.14.1",
     "commander": "~2.9.0",
@@ -62,16 +67,13 @@
     "karma-script-launcher": "~0.1.0",
     "open": "~0.0.4",
     "should": "~3.3.1",
-    "supertest": "~0.11.0",
-    "time-grunt": "~0.3.1"
-  },
-  "engines": {
-    "node": ">=0.10.0"
+    "supertest": "~0.11.0"
   },
   "scripts": {
     "start": "node server/app.js",
     "sensor": "node cli/sensor.js",
     "test": "grunt test",
+    "postinstall": "",
     "update-webdriver": "node node_modules/grunt-protractor-runner/node_modules/protractor/bin/webdriver-manager update",
     "bower-version": "bower --version",
     "bower-install": "bower install --verbose"

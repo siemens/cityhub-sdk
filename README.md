@@ -16,22 +16,22 @@ How to setup the NodeJS/JavaScript development environment required for this pro
   - Make sure that you set the Microsoft Windows SDK environment variables before installing any node packages that require native compilation,
     by typing the following command in the console `<MS-SDK-PATH>\bin\Setenv.cmd /Release /x64`, e.g.:
     ```
-        "C:\Program Files\Microsoft SDKs\Windows\v7.1\bin\Setenv.cmd" /Release /x64
+    "C:\Program Files\Microsoft SDKs\Windows\v7.1\bin\Setenv.cmd" /Release /x64
     ```
 
 ## Install Dependencies
 
 1. Install Node.js and npm
-  - Download and install [Node.js](http://nodejs.org/)
+  - Download and install [Node.js v0.12.7](https://nodejs.org/en/blog/release/v0.12.7/) for your platform (note that there are some open issues with the newest node/npm versions 4.x/5.x concerning some npm dependencies)
   - Make sure node and npm are installed properly. Check this by typing:
     ```
-        node --version
-        npm --version
+    node --version
+    npm --version
     ```
   - *(Optional)* Set npm proxy if required (e.g. by using the config scripts config_proxy.sh or config_proxy.bat)
 
 2. Install Grunt and Bower using npm (executing shell commands with administrator rights might be required)
-  - Type the following to install grunt and bower:
+  - Type the following commands to install grunt and bower:
   ```
     npm install -g bower grunt grunt-cli
     bower --version
@@ -39,7 +39,7 @@ How to setup the NodeJS/JavaScript development environment required for this pro
   ```
 
 3. *(Optional)* Install [Mosca](https://github.com/mcollina/mosca) MQTT broker
-  - Type (executing with Administrator rights might be required):
+  - Type the following commands (executing with Administrator rights might be required):
   ```
      npm install -g mosca bunyan
      mosca --version
@@ -59,11 +59,12 @@ How to setup the NodeJS/JavaScript development environment required for this pro
 
 Start the Application
 ---------------------
-1. Start node application (the web browser will be automatically started, build process / server / browser automatically restarted/refreshed upon changes).
+1. Start node application
   - Type the following command in the console for starting the application:
   ```
      npm start
   ```
+  - Open the web browser with the URL [http://localhost:9000]()
 
 2. *(Optional)* Start MQTT Broker Mosca (if installed), by typing:
   - Windows:
