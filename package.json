@@ -31,11 +31,11 @@
     "mqtt": "~1.5.0",
     "request": "~2.65.0",
     "serve-favicon": "~2.3.0",
-    "socket.io": "~1.3.7",
-    "socket.io-client": "~1.3.7"
+    "socket.io": "~1.4.5",
+    "socket.io-client": "~1.4.5"
   },
   "devDependencies": {
-    "bower": "~1.6.5",
+    "bower": "~1.7.9",
     "grunt": "~0.4.5",
     "grunt-asset-injector": "~0.1.0",
     "grunt-concurrent": "~2.0.4",
@@ -66,11 +66,13 @@
     "karma-requirejs": "~0.2.1",
     "karma-script-launcher": "~0.1.0",
     "open": "~0.0.4",
+    "requirejs": "~2.1.11",
     "should": "~3.3.1",
     "supertest": "~0.11.0"
   },
   "scripts": {
     "start": "node server/app.js",
+    "start-mqtt": "mosca -v --http-port 9883 --http-bundle --http-static ./ | bunyan",
     "sensor": "node cli/sensor.js",
     "test": "grunt test",
     "postinstall": "",
