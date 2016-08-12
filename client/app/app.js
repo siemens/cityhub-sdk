@@ -8,7 +8,6 @@
 
 angular.module('chSensorsApp', [
   'btford.socket-io',
-  'ngCookies',
   'ngResource',
   'ngSanitize',
   'ui.router',

@@ -1,6 +1,6 @@
 {
   "name": "cityhub-sdk",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "server/app.js",
   "license": "BSD-2-Clause",
   "repository": {
@@ -8,31 +8,28 @@
     "url": "git://github.com/siemens/cityhub-sdk.git"
   },
   "engines": {
-    "node": ">=0.12.7 <4.0.0",
-    "npm": ">=2.11.3 <3.0.0",
-    "supertest": "~0.11.0"
+    "node": ">=4.0.0",
+    "npm": ">=3.0.0"
   },
   "dependencies": {
-    "body-parser": "~1.14.1",
-    "commander": "~2.9.0",
-    "composable-middleware": "~0.3.0",
-    "compression": "~1.6.0",
-    "connect-livereload": "~0.5.3",
-    "cookie-parser": "~1.4.0",
-    "cron": "~1.0.9",
-    "debug": "~2.2.0",
-    "ejs": "~0.8.4",
-    "errorhandler": "~1.4.2",
-    "express": "~4.13.3",
-    "express-session": "~1.12.0",
-    "lodash": "~2.4.1",
-    "method-override": "~2.3.5",
-    "morgan": "~1.6.1",
-    "mqtt": "~1.5.0",
-    "request": "~2.65.0",
-    "serve-favicon": "~2.3.0",
-    "socket.io": "~1.4.5",
-    "socket.io-client": "~1.4.5"
+    "body-parser": "1.14.2",
+    "commander": "2.9.0",
+    "composable-middleware": "0.3.0",
+    "compression": "1.6.2",
+    "connect-livereload": "0.5.3",
+    "cron": "1.0.9",
+    "debug": "2.2.0",
+    "ejs": "0.8.4",
+    "errorhandler": "1.4.3",
+    "express": "4.13.4",
+    "http-auth": "2.4.4",
+    "lodash": "3.10.1",
+    "morgan": "1.6.1",
+    "mqtt": "1.7.5",
+    "request": "2.69.0",
+    "serve-favicon": "2.3.0",
+    "socket.io": "1.4.8",
+    "socket.io-client": "1.4.8"
   },
   "devDependencies": {
     "bower": "~1.7.9",

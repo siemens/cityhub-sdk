@@ -1,5 +1,5 @@
 # City Hub SDK
-##### Date: November 2015, Authors: MR, TA
+##### Last update: August 2016, Authors: Marcos Rocha, Tobias Aigner
 The City Hub SDK provides an emulation environment for the City Hub devices and their sensors (available parking spaces, available bikes (bike-sharing), temperature, humidity, ambient noise, traffic density, etc). Sensor values are be basically set through REST APIs. Sensor values can be queried through REST APIs (sample web application provided), or directly acquired through a pub/sub middleware (MQTT topics). Moreover, this SDK provides a sample transaction API for booking parking spaces and bikes.
 
 This SDK provides:
@@ -7,30 +7,28 @@ This SDK provides:
   - A command line tool for setting sensor values in a automated way (Node.js command line application)
 
 # Installation
-How to setup the NodeJS/JavaScript development environment required for this project (tested on Ubuntu 14.04 LTS / Windows 7 64-Bit).
+How to setup the NodeJS/JavaScript development environment required for this project (tested on Ubuntu 16.04 LTS / Windows 7 64-Bit).
 
-## Windows-only Prerequisites
+# Windows-only Prerequisites (npm binary build dependencies)
+  - Install Microsoft Visual Studio Community 2015 https://www.visualstudio.com/ (Custom install, Select Visual C++ during the installation)
+  - Config npm for VS2015: ```npm config set msvs_version 2015 --global```
 
-- Install Microsoft Windows SDK (required for compiling native dependencies and tools)
-  - Download and install Microsoft Windows SDK for your Windows version (e.g. from [https://www.microsoft.com/en-us/download/details.aspx?id=8279]())
-  - Make sure that you set the Microsoft Windows SDK environment variables before installing any node packages that require native compilation,
-    by typing the following command in the console `<MS-SDK-PATH>\bin\Setenv.cmd /Release /x64`, e.g.:
-    ```
-    "C:\Program Files\Microsoft SDKs\Windows\v7.1\bin\Setenv.cmd" /Release /x64
-    ```
+## Install Development Environment & Dependencies
+1. *(Optional)* Install GIT
+  - Download and install GIT
+    http://msysgit.github.io/
+  - Make sure that GIT is on the system path (e.g. C:\Program Files\Git\cmd)
 
-## Install Dependencies
-
-1. Install Node.js and npm
-  - Download and install [Node.js v0.12.7](https://nodejs.org/en/blog/release/v0.12.7/) for your platform (note that there are some open issues with the newest node/npm versions 4.x/5.x concerning some npm dependencies)
+2. Install Node.js and npm
+  - Download and install [Node.js v6.x](https://nodejs.org/download/release/latest-v6.x/) for your platform (note that there are open issues with the newest node/npm versions 5.x concerning some npm dependencies; however, npm v6.3.1 works fine with some warnings)
   - Make sure node and npm are installed properly. Check this by typing:
-    ```
-    node --version
-    npm --version
-    ```
+  ```
+  node --version
+  npm --version
+  ```
   - *(Optional)* Set npm proxy if required (e.g. by using the config scripts config_proxy.sh or config_proxy.bat)
 
-2. Install Grunt and Bower using npm (executing shell commands with administrator rights might be required)
+3. Install Grunt and Bower using npm (executing shell commands with administrator rights might be required)
   - Type the following commands to install grunt and bower:
   ```
     npm install -g bower grunt grunt-cli
@@ -38,42 +36,37 @@ How to setup the NodeJS/JavaScript development environment required for this pro
     grunt --version
   ```
 
-3. *(Optional)* Install [Mosca](https://github.com/mcollina/mosca) MQTT broker
+4. *(Optional)* Install [Mosca](https://github.com/mcollina/mosca) MQTT broker
   - Type the following commands (executing with Administrator rights might be required):
   ```
      npm install -g mosca bunyan
      mosca --version
   ```
 
-4. Automatically install project npm & bower dependencies excluding MQTT Mosca (executing with administrator rights might be required)
-  - Windows:
+5. Automatically install project npm & bower dependencies excluding MQTT Mosca (executing with administrator rights might be required)
     ```
-       install.bat
-    ```
-  - Linux (sudo might be required):
-    ```
-       ./install.sh
+       npm install
+       bower install
     ```
 
-5. Make sure that a modern web browser is installed (tested on Chrome v46)
+6. Make sure that a modern web browser is installed (tested on Chrome v52)
 
 Start the Application
 ---------------------
 1. Start node application
   - Type the following command in the console for starting the application:
   ```
+     grunt serve
+  ```
+  OR
+  ```
      npm start
   ```
   - Open the web browser with the URL [http://localhost:9000]()
 
 2. *(Optional)* Start MQTT Broker Mosca (if installed), by typing:
-  - Windows:
   ```
-     start_mqtt_mosca.bat
-  ```
-  - Linux:
-  ```
-     ./start_mqtt_mosca.sh
+     npm run start-mqtt
   ```
 
 3. Check/set sensor values
