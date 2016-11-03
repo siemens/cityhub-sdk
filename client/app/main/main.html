@@ -33,15 +33,15 @@
             <h1 class="page-header">
                 Sample Devices
             </h1>
-            <accordion close-others="true">
-                <accordion-group ng-repeat="device in devices | orderBy:id">
-                    <accordion-heading>
+            <uib-accordion close-others="true">
+                <uib-accordion-group ng-repeat="device in devices | orderBy:id" is-open="status.open">
+                    <uib-accordion-heading>
                         <a href="#" tooltip="{{device.info}}">{{device.id}}<i class="pull-left fa"
                                                                               ng-class="{'fa-chevron-down': status.open, 'fa-chevron-right': !status.open}"></i></a>
                         <button type="button" class="pull-right btn btn-xs btn-danger glyphicon glyphicon-trash"
                                 ng-click="deleteDevice(device); $event.preventDefault(); $event.stopPropagation();"
                                 tooltip="Delete"></button>
-                    </accordion-heading>
+                    </uib-accordion-heading>
                     <form name="{{device.id}}" class="form-horizontal" role="form">
                         <h3>Device</h3>
 
@@ -125,8 +125,8 @@
                             </button>
                         </p>
                     </form>
-                </accordion-group>
-            </accordion>
+                </uib-accordion-group>
+            </uib-accordion>
         </div>
     </div>
 
@@ -135,15 +135,15 @@
             <h1 class="page-header">
                 Sample Users
             </h1>
-            <accordion close-others="true">
-                <accordion-group ng-repeat="user in users | orderBy:id">
-                    <accordion-heading>
+            <uib-accordion close-others="true">
+                <uib-accordion-group ng-repeat="user in users | orderBy:id" is-open="status.open">
+                    <uib-accordion-heading>
                         <a href="#" tooltip="{{user.info}}">{{user.id}}<i class="pull-left fa"
                                                                           ng-class="{'fa-chevron-down': status.open, 'fa-chevron-right': !status.open}"></i></a>
                         <button type="button" class="pull-right btn btn-xs btn-danger glyphicon glyphicon-trash"
                                 ng-click="deleteUser(user); $event.preventDefault(); $event.stopPropagation();"
                                 tooltip="Delete"></button>
-                    </accordion-heading>
+                    </uib-accordion-heading>
                     <form name="{{user.id}}" class="form-horizontal" role="form">
                         <h3>User</h3>
 
@@ -187,14 +187,14 @@
                             </button>
                         </p>
                     </form>
-                </accordion-group>
-            </accordion>
+                </uib-accordion-group>
+            </uib-accordion>
         </div>
     </div>
 </div>
 
 <footer class="footer">
     <div class="container">
-        <p>City Hub SDK v0.1</p>
+        <p>City Hub SDK v0.2</p>
     </div>
 </footer>
