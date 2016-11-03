@@ -17,18 +17,18 @@ How to setup the NodeJS/JavaScript development environment required for this pro
 1. *(Optional)* Install GIT
   - Download and install GIT
     http://msysgit.github.io/
-  - Make sure that GIT is on the system path (e.g. C:\Program Files\Git\cmd)
+  - Make sure that GIT is on the system path (e.g. for Windows add "C:\Program Files\Git\cmd" to your PATH environment variable)
 
 2. Install Node.js and npm
-  - Download and install [Node.js v6.x](https://nodejs.org/download/release/latest-v6.x/) for your platform (note that there are open issues with the newest node/npm versions 5.x concerning some npm dependencies; however, npm v6.3.1 works fine with some warnings)
+  - Download and install [Node.js v6.x](https://nodejs.org/download/release/latest-v6.x/) for your platform (at least npm v6.3.1 has been tested and works fine, the warnings can be ignored)
   - Make sure node and npm are installed properly. Check this by typing:
   ```
   node --version
   npm --version
   ```
-  - *(Optional)* Set npm proxy if required (e.g. by using the config scripts config_proxy.sh or config_proxy.bat)
+  - *(Optional)* If you are connected to the internet through e.g. a corporate proxy, set npm proxy if required (e.g. by using the config scripts config_proxy.sh or config_proxy.bat)
 
-3. Install Grunt and Bower using npm (executing shell commands with administrator rights might be required)
+3. Install Grunt and Bower using npm (executing shell commands with administrator rights, i.e. under Linux: `sudo`, might be required)
   - Type the following commands to install grunt and bower:
   ```
     npm install -g bower grunt grunt-cli
@@ -37,19 +37,21 @@ How to setup the NodeJS/JavaScript development environment required for this pro
   ```
 
 4. *(Optional)* Install [Mosca](https://github.com/mcollina/mosca) MQTT broker
-  - Type the following commands (executing with Administrator rights might be required):
+  - Type the following commands (executing with Administrator rights, i.e. under Linux: `sudo`, might be required):
   ```
      npm install -g mosca bunyan
      mosca --version
   ```
 
-5. Automatically install project npm & bower dependencies excluding MQTT Mosca (executing with administrator rights might be required)
+5. Automatically install project npm & bower dependencies excluding MQTT Mosca (executing with administrator rights, i.e. under Linux: `sudo`, might be required)
     ```
        npm install
        bower install
     ```
 
-6. Make sure that a modern web browser is installed (tested on Chrome v52)
+6. Make sure that a modern web browser is installed (tested on Chrome v54)
+
+7. Install an appropriate JavaScript IDE (e.g. https://code.visualstudio.com/ or https://www.jetbrains.com/webstorm/)
 
 Start the Application
 ---------------------
