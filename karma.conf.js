@@ -30,6 +30,8 @@ module.exports = function(config) {
       'client/bower_components/angular-ui-router/release/angular-ui-router.js',
       'client/bower_components/paho-mqtt-js/mqttws31.js',
       'client/bower_components/angular-notify/dist/angular-notify.js',
+      'client/bower_components/leaflet/dist/leaflet-src.js',
+      'client/bower_components/Leaflet.awesome-markers/dist/leaflet.awesome-markers.js',
       'client/app/app.js',
       'client/app/**/*.js',
       'client/components/**/*.js',
@@ -38,7 +40,7 @@ module.exports = function(config) {
     ],
 
     preprocessors: {
-      '**/*.html': 'html2js',
+      '**/*.html': 'html2js'
     },
 
     ngHtml2JsPreprocessor: {

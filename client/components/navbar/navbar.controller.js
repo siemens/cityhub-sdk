@@ -22,7 +22,12 @@ angular.module('chSensorsApp')
     {
       'title': 'MQTT',
       'link': '/mqtt'
-    }];
+    },
+    {
+      'title': 'Map',
+      'link': '/map'
+    }
+    ];
 
     $scope.isCollapsed = true;
 

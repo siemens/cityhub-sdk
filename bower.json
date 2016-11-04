@@ -12,6 +12,8 @@
     "bootstrap": "3.3.6",
     "font-awesome": "4.6.3",
     "jquery": "1.11.3",
+    "leaflet": "1.0.0",
+    "Leaflet.awesome-markers": "2.0.2",
     "lodash": "4.13.1",
     "paho-mqtt-js": "1.0.1"
   },
