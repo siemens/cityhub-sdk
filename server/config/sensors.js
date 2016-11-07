@@ -20,7 +20,9 @@ var devices = [
     {id: 'ch7', info: 'Universität, Munich', latitude: 48.1500645, longitude: 11.5662824},
     {id: 'ch8', info: 'Prinzregentenplatz, Munich', latitude: 48.1277837, longitude: 11.5773546},
     {id: 'ch9', info: 'Hauptbahnhof - Main Train Station, Munich', latitude: 48.140462, longitude: 11.5555776},
-    {id: 'ch10', info: 'Fröttmaning - Soccer Arena, Munich', latitude: 48.2131391, longitude: 11.616277}];
+    {id: 'ch10', info: 'Fröttmaning - Soccer Arena, Munich', latitude: 48.2131391, longitude: 11.616277},
+    {id: 'ch11', info: 'Garching - TUM Fakultät für Informatik', latitude: 48.26236, longitude: 11.66867}
+];
 
 var sensors = [
     {id: 'AvailableParkingSpaces', index: 1, info: 'Number of available parking spaces in the area, 0-500', type: 'int', isBookable: true, pricePerHour: 1, minValue: 0, maxValue: 500, value: 10, timestamp: '1970-01-01T00:00:00.000Z'},

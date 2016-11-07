@@ -1,0 +1,151 @@
+{
+	"variables": [],
+	"info": {
+		"name": "CityHub-SDK",
+		"_postman_id": "2446e183-1bdd-c6d0-4552-d6b32ff1238d",
+		"description": "CityHub-SDK REST API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:9000/api/devices",
+			"request": {
+				"url": "http://localhost:9000/api/devices",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "Get devices and their sensor values"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/api/devices/reset",
+			"request": {
+				"url": "http://localhost:9000/api/devices/reset",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "Set devices and their sensor values to default"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/api/devices/ch1",
+			"request": {
+				"url": "http://localhost:9000/api/devices/ch1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "Get device info and sensor values"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/api/devices/ch1",
+			"request": {
+				"url": "http://localhost:9000/api/devices/ch1",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"ch1\",\r\n    \"info\": \"city hub 1\",\r\n    \"latitude\": 36.165036,\r\n    \"longitude\": -86.7840599,\r\n    \"sensors\": [\r\n        {\r\n            \"id\": \"AvailableParkingSpaces\",\r\n            \"index\": 1,\r\n            \"info\": \"Number of available parking spaces in the area, 0-500\",\r\n            \"type\": \"int\",\r\n            \"isBookable\": true,\r\n            \"pricePerHour\": 1,\r\n            \"minValue\": 0,\r\n            \"maxValue\": 500,\r\n            \"value\": 5,\r\n            \"timestamp\": \"1970-01-01T00:00:00.000Z\"\r\n        },\r\n        {\r\n            \"id\": \"AvailableBikes\",\r\n            \"index\": 2,\r\n            \"info\": \"Number of available bikes for rent in the area, 0-20\",\r\n            \"type\": \"int\",\r\n            \"isBookable\": true,\r\n            \"pricePerHour\": 5,\r\n            \"minValue\": 0,\r\n            \"maxValue\": 20,\r\n            \"value\": 10,\r\n            \"timestamp\": \"1970-01-01T00:00:00.000Z\"\r\n        },\r\n        {\r\n            \"id\": \"Temperature\",\r\n            \"index\": 3,\r\n            \"info\": \"Temperature sensor, -150 - +150 Celsius/Fahrenheit\",\r\n            \"type\": \"float\",\r\n            \"minValue\": -150,\r\n            \"maxValue\": 150,\r\n            \"value\": 20,\r\n            \"timestamp\": \"1970-01-01T00:00:00.000Z\"\r\n        },\r\n        {\r\n            \"id\": \"Humidity\",\r\n            \"index\": 4,\r\n            \"info\": \"Atmospheric relative humidity sensor, 10 - 95% RH\",\r\n            \"type\": \"float\",\r\n            \"minValue\": 10,\r\n            \"maxValue\": 95,\r\n            \"value\": 40,\r\n            \"timestamp\": \"1970-01-01T00:00:00.000Z\"\r\n        },\r\n        {\r\n            \"id\": \"UVB\",\r\n            \"index\": 5,\r\n            \"info\": \"Ultraviolet light sensor that responds primarily to UVB radiation, 290-320 nm\",\r\n            \"type\": \"float\",\r\n            \"minValue\": 290,\r\n            \"maxValue\": 320,\r\n            \"value\": 300,\r\n            \"timestamp\": \"1970-01-01T00:00:00.000Z\"\r\n        },\r\n        {\r\n            \"id\": \"AmbientNoise\",\r\n            \"index\": 6,\r\n            \"info\": \"Ambient noise sensor in Decibels 0-200 dBA\",\r\n            \"type\": \"float\",\r\n            \"minValue\": 0,\r\n            \"maxValue\": 200,\r\n            \"value\": 100,\r\n            \"timestamp\": \"1970-01-01T00:00:00.000Z\"\r\n        },\r\n        {\r\n            \"id\": \"CarbonDioxide\",\r\n            \"index\": 7,\r\n            \"info\": \"Carbon Dioxide Sensor, 0-2000ppm\",\r\n            \"type\": \"int\",\r\n            \"minValue\": 0,\r\n            \"maxValue\": 2000,\r\n            \"value\": 500,\r\n            \"timestamp\": \"1970-01-01T00:00:00.000Z\"\r\n        },\r\n        {\r\n            \"id\": \"Proximity\",\r\n            \"index\": 8,\r\n            \"info\": \"Proximity sensor based e.g. on ultra-sound sensor, 0-800cm\",\r\n            \"type\": \"int\",\r\n            \"minValue\": 0,\r\n            \"maxValue\": 800,\r\n            \"value\": 800,\r\n            \"timestamp\": \"1970-01-01T00:00:00.000Z\"\r\n        },\r\n        {\r\n            \"id\": \"Events\",\r\n            \"index\": 9,\r\n            \"info\": \"Current events in the area, e.g. Oktoberfest\",\r\n            \"type\": \"string\",\r\n            \"value\": \"Oktoberfest\",\r\n            \"timestamp\": \"1970-01-01T00:00:00.000Z\"\r\n        },\r\n        {\r\n            \"id\": \"TrafficDensity\",\r\n            \"index\": 10,\r\n            \"info\": \"Normalized traffic density, 0-100\",\r\n            \"type\": \"int\",\r\n            \"minValue\": 0,\r\n            \"maxValue\": 100,\r\n            \"value\": 50,\r\n            \"timestamp\": \"1970-01-01T00:00:00.000Z\"\r\n        }\r\n    ]\r\n}"
+				},
+				"description": "Set device info and sensor values"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/api/devices/ch1",
+			"request": {
+				"url": "http://localhost:9000/api/devices/ch1",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "Delete device"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/api/all/AvailableParkingSpaces",
+			"request": {
+				"url": "http://localhost:9000/api/all/AvailableParkingSpaces",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "Get available parking spaces registered on all devices"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/api/all/AvailableBikes",
+			"request": {
+				"url": "http://localhost:9000/api/all/AvailableBikes",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "Get available bike sharing bikes on all devices"
+			},
+			"response": []
+		}
+	]
+}
