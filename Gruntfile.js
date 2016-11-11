@@ -7,11 +7,14 @@
 'use strict';
 
 module.exports = function(grunt) {
+  // default localConfig (environment variables)
   var localConfig;
   try {
     localConfig = require('./server/config/local.env');
   } catch (e) {
-    localConfig = {};
+    localConfig = {
+      NODE_ENV: 'development'
+    };
   }
 
   // Load grunt tasks automatically, when needed

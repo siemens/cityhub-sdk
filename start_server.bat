@@ -5,7 +5,7 @@ REM Set webserver port
 SET PORT=9000
 
 REM Set production/development environment
-ET NODE_ENV=development
+ET NODE_ENV=production
 
 REM Set nodejs app path
 SET NODE_APP=server/app.js

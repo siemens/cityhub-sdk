@@ -3,8 +3,8 @@
  */
 'use strict';
 
-// Set default node environment to development
-process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+// Set default node environment to production
+process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 console.log('==> NODE_ENV =', process.env.NODE_ENV);
 
 var express = require('express');
@@ -18,7 +18,8 @@ require('./routes')(app);
 
 // init websocket
 app.socketio = require('socket.io')(server, {
-  serveClient: (config.env === 'production') ? false : true,
+  //serveClient: (config.env === 'production') ? false : true,
+  serveClient: true,
   path: '/socket.io-client'
 });
 require('./config/socketio')(app.socketio);
@@ -37,4 +38,4 @@ server.listen(config.port, config.ip, function() {
 });
 
 // Expose app
-exports = module.exports = app;
+module.exports = app;

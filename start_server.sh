@@ -4,7 +4,7 @@
 export PORT=9000
 
 # Set production/development environment
-export NODE_ENV=development
+export NODE_ENV=production
 
 # Set nodejs app path
 export NODE_APP=server/app.js
