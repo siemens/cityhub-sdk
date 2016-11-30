@@ -12,53 +12,56 @@ angular.module('chSensorsApp')
     $scope.users = [];
 
     $scope.loadConfig = function() {
-      $http.get('/api/devices').success(function(devices) {
+      $http.get('/api/devices')
+      .success(function(devices) {
         $scope.devices = devices;
-      })
-        .error(function(data, status) {
-          console.log('Error loading devices: ', status);
-          notify({message: 'Error loading devices: HTTP ' +  status, classes: 'alert-danger'});
+        socket.unsyncUpdates('device');
+        socket.syncUpdates('device', $scope.devices, function(event, device) {
+          //console.log('Got websocket message', event, sensor);
+          if (event === 'created' || event === 'updated') {
+            // created / updated
+            if (!device.id) {
+              // reload full configuration
+              $scope.loadConfig();
+              notify({message: 'Device sensors reloaded (modified on server).', classes: 'alert-info'});
+            }
+          } else {
+            // removed
+            notify({message: 'Device sensors ' + device.id + ' removed on server.', classes: 'alert-info'});
+          }
         });
+      })
+      .error(function(data, status) {
+        console.log('Error loading devices: ', status);
+        notify({message: 'Error loading devices: HTTP ' +  status, classes: 'alert-danger'});
+      });
 
-      $http.get('/api/users').success(function(users) {
+      $http.get('/api/users')
+      .success(function(users) {
         $scope.users = users;
-      })
-        .error(function(data, status) {
-          console.log('Error loading users: ', status);
-          notify({message: 'Error loading users: HTTP ' +  status, classes: 'alert-danger'});
+        socket.unsyncUpdates('user');
+        socket.syncUpdates('user', $scope.users, function(event, user) {
+          //console.log('Got websocket message', event, sensor);
+          if (event === 'created' || event === 'updated') {
+            // created / updated
+            if (!user.id) {
+              // reload full configuration
+              $scope.loadConfig();
+              notify({message: 'Users reloaded (modified on server).', classes: 'alert-info'});
+            }
+          } else {
+            // removed
+            notify({message: 'Users ' + user.id + ' removed on server.', classes: 'alert-info'});
+          }
         });
+      })
+      .error(function(data, status) {
+        console.log('Error loading users: ', status);
+        notify({message: 'Error loading users: HTTP ' +  status, classes: 'alert-danger'});
+      });
     };
 
     $scope.loadConfig();
-
-    /**
-     * Helper method for copying angular annotations (improves UI refresh upon updates)
-     * @param dst
-     * @param src
-     */
-    function copyAngularAnnotations(dst, src) {
-      for (var key in src) {
-        var srcVal = src[key];
-        var dstVal = dst[key];
-        if (Array.isArray(srcVal) && Array.isArray(dstVal)) {
-          for (var i = 0; i < srcVal.length; i++) {
-            // check identity through id property
-            var srcId = srcVal[i].id;
-            if (srcId) {
-              var indexDst = _.findIndex(dstVal, {id: srcId});
-              if (indexDst !== -1) {
-                copyAngularAnnotations(dstVal[indexDst], srcVal[i]);
-              }
-            }
-          }
-        }
-        if (typeof key === 'string' && key.charAt(0) === '$' && key.charAt(1) === '$') {
-          // copy angular $$hashKey fields
-          //console.log('copyAngularAnnotations ' + key + '=' + srcVal);
-          dst[key] = srcVal;
-        }
-      }
-    }
 
     ///////////////////
     // register SocketIO connection callback
@@ -76,66 +79,6 @@ angular.module('chSensorsApp')
       }
     };
     socket.syncConnection(socketSyncConnectCb);
-    socket.socket.on('device:save', function(device) {
-      console.log('Got websocket message device:save', device);
-      if (device.id) {
-        var indexDevice = _.findIndex($scope.devices, {id: device.id});
-        if (indexDevice !== -1) {
-          var deviceModified = angular.toJson($scope.devices[indexDevice]) !== JSON.stringify(device);
-          if (deviceModified) {
-            var oldDevice = $scope.devices[indexDevice];
-            $scope.devices[indexDevice] = device;
-            // copy angular hash codes from oldDevice to avoid full repaint
-            copyAngularAnnotations($scope.devices[indexDevice], oldDevice);
-            //console.log('old=' + JSON.stringify(oldDevice));
-            //console.log('new=' + JSON.stringify($scope.devices[indexDevice]));
-            notify({message: 'Device ' + device.id + ' reloaded (modified on server).', classes: 'alert-info'});
-          }
-        }
-      } else {
-        // reload full configuration
-        $scope.loadConfig();
-        notify({message: 'Devices reloaded (modified on server).', classes: 'alert-info'});
-      }
-    });
-    socket.socket.on('device:remove', function(device) {
-      console.log('Got websocket message device:remove', device);
-      var removedElements = _.remove($scope.devices, {id: device.id});
-      console.log('removedElements', removedElements);
-      if (removedElements.length > 0) {
-        notify({message: 'Device ' + device.id + ' removed on server.', classes: 'alert-info'});
-      }
-    });
-    socket.socket.on('user:save', function(user) {
-      console.log('Got websocket message user:save', user);
-      if (user.id) {
-        var indexUser = _.findIndex($scope.users, {id: user.id});
-        if (indexUser !== -1) {
-          var deviceModified = angular.toJson($scope.users[indexUser]) !== JSON.stringify(user);
-          if (deviceModified) {
-            var oldUser = $scope.users[indexUser];
-            $scope.users[indexUser] = user;
-            // copy angular hash codes from oldUser to avoid full repaint
-            copyAngularAnnotations($scope.users[indexUser], oldUser);
-            //console.log('old=' + JSON.stringify(oldUser));
-            //console.log('new=' + JSON.stringify($scope.devices[indexUser]));
-            notify({message: 'User ' + user.id + ' reloaded (modified on server).', classes: 'alert-info'});
-          }
-        }
-      } else {
-        // reload full configuration
-        $scope.loadConfig();
-        notify({message: 'Users reloaded (modified on server).', classes: 'alert-info'});
-      }
-    });
-    socket.socket.on('user:remove', function(user) {
-      console.log('Got websocket message user:remove', user);
-      var removedElements = _.remove($scope.users, {id: user.id});
-      console.log('removedElements', removedElements);
-      if (removedElements.length > 0) {
-        notify({message: 'User ' + user.id + ' removed on server.', classes: 'alert-info'});
-      }
-    });
     ///////////////////
 
     $scope.resetConfig = function() {
@@ -349,10 +292,8 @@ angular.module('chSensorsApp')
     };
 
     function destroy() {
-      socket.socket.removeAllListeners('device:save');
-      socket.socket.removeAllListeners('device:remove');
-      socket.socket.removeAllListeners('user:save');
-      socket.socket.removeAllListeners('user:remove');
+      socket.unsyncUpdates('device');
+      socket.unsyncUpdates('user');
     }
 
     $scope.$on('$destroy', function() {

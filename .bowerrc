@@ -1,4 +1,8 @@
 {
-    "directory": "client/bower_components",
-    "strict-ssl": false
+  "directory": "client/bower_components",
+  "timeout": 60000,
+  "resolvers": [
+    "bower-art-resolver"
+  ],
+  "strict-ssl": false
 }

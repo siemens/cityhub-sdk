@@ -28,19 +28,20 @@
     "mqtt": "1.7.5",
     "request": "2.69.0",
     "serve-favicon": "2.3.0",
-    "socket.io": "1.4.8",
-    "socket.io-client": "1.4.8"
+    "socket.io": "1.6.0",
+    "socket.io-client": "1.6.0"
   },
   "devDependencies": {
-    "bower": "~1.7.9",
+    "bower": ">=1.8.0",
+    "bower-art-resolver": "^2.0.7",
     "grunt": "~0.4.5",
     "grunt-asset-injector": "~0.1.0",
     "grunt-concurrent": "~2.0.4",
-    "grunt-contrib-jshint": "~0.11.3",
+    "grunt-contrib-jshint": "^1.0.0",
     "grunt-contrib-watch": "~0.6.1",
     "grunt-env": "~0.4.1",
     "grunt-express-server": "~0.5.1",
-    "grunt-jscs": "~2.2.0",
+    "grunt-jscs": "^3.0.1",
     "grunt-karma": "~0.8.2",
     "grunt-mocha-test": "~0.10.2",
     "grunt-newer": "~1.1.1",
@@ -50,7 +51,7 @@
     "grunt-protractor-runner": "~1.1.0",
     "grunt-wiredep": "~2.0.0",
     "jit-grunt": "~0.9.1",
-    "jscs": "~2.4.0",
+    "jscs": "^3.0.7",
     "jshint-stylish": "~2.0.1",
     "karma": "~0.12.9",
     "karma-chrome-launcher": "~0.2.1",
@@ -64,17 +65,19 @@
     "karma-script-launcher": "~0.1.0",
     "open": "~0.0.4",
     "requirejs": "~2.1.11",
-    "should": "~3.3.1",
-    "supertest": "~0.11.0"
+    "should": "~3.3.2",
+    "supertest": "1.2.0"
   },
   "scripts": {
     "start": "node server/app.js",
     "start-mqtt": "mosca -v --http-port 9883 --http-bundle --http-static ./ | bunyan",
     "sensor": "node cli/sensor.js",
-    "test": "grunt test",
+    "test": "grunt test:client",
+    "jshint": "grunt jshint:all --force --verbose",
+    "jscs": "grunt jscs --force --verbose",
     "postinstall": "",
     "update-webdriver": "node node_modules/grunt-protractor-runner/node_modules/protractor/bin/webdriver-manager update",
     "bower-version": "bower --version",
-    "bower-install": "bower install --verbose"
+    "bower-install": "bower install --verbose --allow-root"
   }
 }

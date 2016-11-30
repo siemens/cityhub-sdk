@@ -21,6 +21,35 @@ angular.module('chSensorsApp')
       ioSocket: ioSocket
     });
 
+    /**
+     * Helper method for copying angular annotations (improves UI refresh upon updates)
+     * @param dst
+     * @param src
+     */
+    function copyAngularAnnotations(dst, src) {
+      for (var key in src) {
+        var srcVal = src[key];
+        var dstVal = dst[key];
+        if (Array.isArray(srcVal) && Array.isArray(dstVal)) {
+          for (var i = 0; i < srcVal.length; i++) {
+            // check identity through id property
+            var srcId = srcVal[i].id;
+            if (srcId) {
+              var indexDst = _.findIndex(dstVal, {id: srcId});
+              if (indexDst !== -1) {
+                copyAngularAnnotations(dstVal[indexDst], srcVal[i]);
+              }
+            }
+          }
+        }
+        if (typeof key === 'string' && key.charAt(0) === '$' && key.charAt(1) === '$') {
+          // copy angular $$hashKey fields
+          //console.log('copyAngularAnnotations ' + key + '=' + srcVal);
+          dst[key] = srcVal;
+        }
+      }
+    }
+
     var isConnected = false;
     var isLoading = false;
 
@@ -79,23 +108,27 @@ angular.module('chSensorsApp')
        * @param {Function} cb
        */
       syncUpdates: function(modelName, array, cb) {
+        //console.log('syncUpdates(' + modelName + ', ', array, ')');
         cb = cb || angular.noop;
 
         /**
          * Syncs item creation/updates on 'model:save'
          */
         socket.on(modelName + ':save', function(item) {
-          var oldItem = _.find(array, {_id: item._id});
-          var index = array.indexOf(oldItem);
-          var event = 'created';
+          var oldItemIndex = _.findIndex(array, {id: item.id});
+          var event;
 
           // replace oldItem if it exists
           // otherwise just add item to the collection
-          if (oldItem) {
-            array.splice(index, 1, item);
+          if (oldItemIndex >= 0) {
+            // replace old item (and copy angular annotations for optimizing UI updates)
+            copyAngularAnnotations(item, array[oldItemIndex]);
+            array[oldItemIndex] = item;
             event = 'updated';
           } else {
+            // add new item
             array.push(item);
+            event = 'created';
           }
 
           cb(event, item, array);
@@ -106,7 +139,7 @@ angular.module('chSensorsApp')
          */
         socket.on(modelName + ':remove', function(item) {
           var event = 'deleted';
-          _.remove(array, {_id: item._id});
+          _.remove(array, {id: item.id});
           cb(event, item, array);
         });
       },
