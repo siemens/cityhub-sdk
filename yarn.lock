@@ -301,6 +301,12 @@ bl@^1.0.0, bl@~1.0.0:
   dependencies:
     readable-stream "~2.0.5"
 
+bl@~1.1.2:
+  version "1.1.2"
+  resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/bl/-/bl-1.1.2.tgz#fdca871a99713aa00d19e3bbba41c44787a65398"
+  dependencies:
+    readable-stream "~2.0.5"
+
 blob@0.0.4:
   version "0.0.4"
   resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/blob/-/blob-0.0.4.tgz#bcf13052ca54463f30f9fc7e95b9a47630a94921"
@@ -1079,6 +1085,10 @@ es6-promise@^3.0.2:
   version "3.3.1"
   resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/es6-promise/-/es6-promise-3.3.1.tgz#a08cdde84ccdbf34d027a1451bc91d4bcd28a613"
 
+es6-promise@~4.0.3:
+  version "4.0.5"
+  resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/es6-promise/-/es6-promise-4.0.5.tgz#7882f30adde5b240ccfa7f7d78c548330951ae42"
+
 escape-html@1.0.2:
   version "1.0.2"
   resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/escape-html/-/escape-html-1.0.2.tgz#d77d32fa98e38c2f41ae85e9278e0e0e6ba1022c"
@@ -1266,6 +1276,12 @@ findup-sync@~0.1.2:
     glob "~3.2.9"
     lodash "~2.4.1"
 
+findup-sync@~0.3.0:
+  version "0.3.0"
+  resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/findup-sync/-/findup-sync-0.3.0.tgz#37930aa5d816b777c03445e1966cc6790a4c0b16"
+  dependencies:
+    glob "~5.0.0"
+
 for-in@^0.1.5:
   version "0.1.6"
   resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/for-in/-/for-in-0.1.6.tgz#c9f96e89bfad18a545af5ec3ed352a1d9e5b4dc8"
@@ -1308,7 +1324,7 @@ form-data@~0.2.0:
     combined-stream "~0.0.4"
     mime-types "~2.0.3"
 
-form-data@~1.0.0-rc3:
+form-data@~1.0.0-rc3, form-data@~1.0.0-rc4:
   version "1.0.1"
   resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/form-data/-/form-data-1.0.1.tgz#ae315db9a4907fa065502304a66d7733475ee37c"
   dependencies:
@@ -1346,9 +1362,9 @@ fs-access@^1.0.0:
   dependencies:
     null-check "^1.0.0"
 
-fs-extra@~0.26.4:
-  version "0.26.7"
-  resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/fs-extra/-/fs-extra-0.26.7.tgz#9ae1fdd94897798edab76d0918cf42d0c3184fa9"
+fs-extra@~0.30.0:
+  version "0.30.0"
+  resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/fs-extra/-/fs-extra-0.30.0.tgz#f233ffcc08d4da7d432daa449776989db1df93f0"
   dependencies:
     graceful-fs "^4.1.2"
     jsonfile "^2.1.0"
@@ -1474,7 +1490,7 @@ glob@^4.0.5:
     minimatch "^2.0.1"
     once "^1.3.0"
 
-glob@^5.0.1, glob@^5.0.5, glob@^5.0.6:
+glob@^5.0.1, glob@^5.0.5, glob@^5.0.6, glob@~5.0.0:
   version "5.0.15"
   resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/glob/-/glob-5.0.15.tgz#1bc936b9e02f4a603fcc222ecf7633d30b8b93b1"
   dependencies:
@@ -1559,6 +1575,15 @@ grunt-asset-injector@~0.1.0:
     lodash "~2.4.1"
     wiredep "~0.4.2"
 
+grunt-cli@^1.2.0:
+  version "1.2.0"
+  resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/grunt-cli/-/grunt-cli-1.2.0.tgz#562b119ebb069ddb464ace2845501be97b35b6a8"
+  dependencies:
+    findup-sync "~0.3.0"
+    grunt-known-options "~1.1.0"
+    nopt "~3.0.6"
+    resolve "~1.1.0"
+
 grunt-concurrent@~2.0.4:
   version "2.0.4"
   resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/grunt-concurrent/-/grunt-concurrent-2.0.4.tgz#a1131a7cab035df795767bd7edbb6b4bd974fe56"
@@ -1609,6 +1634,10 @@ grunt-karma@~0.8.2:
   resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/grunt-karma/-/grunt-karma-0.8.3.tgz#e9ecf718153af1914aa53602a37f85de04310e7f"
   dependencies:
     lodash "~2.4.1"
+
+grunt-known-options@~1.1.0:
+  version "1.1.0"
+  resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/grunt-known-options/-/grunt-known-options-1.1.0.tgz#a4274eeb32fa765da5a7a3b1712617ce3b144149"
 
 grunt-legacy-log-utils@~0.1.1:
   version "0.1.1"
@@ -1710,7 +1739,7 @@ grunt@~0.4.5:
     underscore.string "~2.2.1"
     which "~1.0.5"
 
-har-validator@~2.0.2, har-validator@~2.0.6:
+har-validator@~2.0.6:
   version "2.0.6"
   resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/har-validator/-/har-validator-2.0.6.tgz#cdcbc08188265ad119b6a5a7c8ab70eecfb5d27d"
   dependencies:
@@ -1755,7 +1784,7 @@ has-unicode@^2.0.0:
   version "2.0.1"
   resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/has-unicode/-/has-unicode-2.0.1.tgz#e0e6fe6a28cf51138855e086d1691e771de2a8b9"
 
-hasha@^2.2.0:
+hasha@~2.2.0:
   version "2.2.0"
   resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/hasha/-/hasha-2.2.0.tgz#78d7cbfc1e6d66303fe79837365984517b2f6ee1"
   dependencies:
@@ -2173,6 +2202,10 @@ jsdoctypeparser@~1.2.0:
   dependencies:
     lodash "^3.7.0"
 
+jshint-junit-reporter@0.0.6:
+  version "0.0.6"
+  resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/jshint-junit-reporter/-/jshint-junit-reporter-0.0.6.tgz#98e5038869be81223d7f4ef0d73c7a9fddb595db"
+
 jshint-stylish@~2.0.1:
   version "2.0.1"
   resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/jshint-stylish/-/jshint-stylish-2.0.1.tgz#845bf38386e55551ff9f840cc7725f7a88b5b2d4"
@@ -2270,11 +2303,12 @@ karma-ng-scenario@~0.1.0:
   version "0.1.0"
   resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/karma-ng-scenario/-/karma-ng-scenario-0.1.0.tgz#0d7c8f1348597252178aab450866507f384d08a3"
 
-karma-phantomjs-launcher@~0.1.4:
-  version "0.1.4"
-  resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/karma-phantomjs-launcher/-/karma-phantomjs-launcher-0.1.4.tgz#4ef96e4322ff63ae5d918e51c25b213723238f30"
+karma-phantomjs-launcher@~1.0.0:
+  version "1.0.2"
+  resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/karma-phantomjs-launcher/-/karma-phantomjs-launcher-1.0.2.tgz#19e1041498fd75563ed86730a22c1fe579fa8fb1"
   dependencies:
-    phantomjs "~1.9"
+    lodash "^4.0.1"
+    phantomjs-prebuilt "^2.1.7"
 
 karma-requirejs@~0.2.1:
   version "0.2.6"
@@ -2426,7 +2460,7 @@ lodash@^2.4.1, lodash@~2.4.1:
   version "2.4.2"
   resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/lodash/-/lodash-2.4.2.tgz#fadd834b9683073da179b3eae6d9c0d15053f73e"
 
-lodash@^4.14.0:
+lodash@^4.0.1, lodash@^4.14.0:
   version "4.17.2"
   resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/lodash/-/lodash-4.17.2.tgz#34a3055babe04ce42467b607d700072c7ff6bf42"
 
@@ -2911,13 +2945,7 @@ on-headers@~1.0.0, on-headers@~1.0.1:
   version "1.0.1"
   resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/on-headers/-/on-headers-1.0.1.tgz#928f5d0f470d49342651ea6794b0857c100693f7"
 
-once@^1.3.0, once@^1.3.1:
-  version "1.4.0"
-  resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/once/-/once-1.4.0.tgz#583b1aa775961d4b113ac17d9c50baef9dd76bd1"
-  dependencies:
-    wrappy "1"
-
-once@~1.3.0, once@~1.3.3:
+once@^1.3.0, once@^1.3.1, once@~1.3.0, once@~1.3.3:
   version "1.3.3"
   resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/once/-/once-1.3.3.tgz#b2e261557ce4c314ec8304f3fa82663e4297ca20"
   dependencies:
@@ -3064,18 +3092,19 @@ pend@~1.2.0:
   version "1.2.0"
   resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/pend/-/pend-1.2.0.tgz#7a57eb550a6783f9115331fcf4663d5c8e007a50"
 
-phantomjs@~1.9:
-  version "1.9.20"
-  resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/phantomjs/-/phantomjs-1.9.20.tgz#4424aca20e14d255c0b0889af6f6b8973da10e0d"
+phantomjs-prebuilt@^2.1.3, phantomjs-prebuilt@^2.1.7:
+  version "2.1.13"
+  resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/phantomjs-prebuilt/-/phantomjs-prebuilt-2.1.13.tgz#66556ad9e965d893ca5a7dc9e763df7e8697f76d"
   dependencies:
+    es6-promise "~4.0.3"
     extract-zip "~1.5.0"
-    fs-extra "~0.26.4"
-    hasha "^2.2.0"
+    fs-extra "~0.30.0"
+    hasha "~2.2.0"
     kew "~0.7.0"
     progress "~1.1.8"
-    request "~2.67.0"
+    request "~2.74.0"
     request-progress "~2.0.1"
-    which "~1.2.2"
+    which "~1.2.10"
 
 pify@^2.0.0:
   version "2.3.0"
@@ -3226,7 +3255,7 @@ qs@4.0.0:
   version "4.0.0"
   resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/qs/-/qs-4.0.0.tgz#c31d9b74ec27df75e543a86c78728ed8d4623607"
 
-qs@5.2.0, qs@~5.2.0:
+qs@5.2.0:
   version "5.2.0"
   resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/qs/-/qs-5.2.0.tgz#a9f31142af468cb72b25b30136ba2456834916be"
 
@@ -3241,6 +3270,10 @@ qs@~0.6.0:
 qs@~6.0.2:
   version "6.0.2"
   resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/qs/-/qs-6.0.2.tgz#88c68d590e8ed56c76c79f352c17b982466abfcd"
+
+qs@~6.2.0:
+  version "6.2.1"
+  resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/qs/-/qs-6.2.1.tgz#ce03c5ff0935bc1d9d69a9f14cbd18e568d67625"
 
 qs@~6.3.0:
   version "6.3.0"
@@ -3319,7 +3352,7 @@ readable-stream@1.0.27-1:
     isarray "0.0.1"
     string_decoder "~0.10.x"
 
-readable-stream@1.1, readable-stream@^1.0.33, readable-stream@^1.1.8, readable-stream@~1.1.8, readable-stream@~1.1.9:
+readable-stream@1.1, readable-stream@^1.1.8, readable-stream@~1.1.8, readable-stream@~1.1.9:
   version "1.1.14"
   resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/readable-stream/-/readable-stream-1.1.14.tgz#7cf4c54ef648e3813084c636dd2079e166c081d9"
   dependencies:
@@ -3328,7 +3361,7 @@ readable-stream@1.1, readable-stream@^1.0.33, readable-stream@^1.1.8, readable-s
     isarray "0.0.1"
     string_decoder "~0.10.x"
 
-"readable-stream@>=1.0.33-1 <1.1.0-0", readable-stream@~1.0.2, readable-stream@~1.0.26, readable-stream@~1.0.26-2:
+"readable-stream@>=1.0.33-1 <1.1.0-0", readable-stream@^1.0.33, readable-stream@~1.0.2, readable-stream@~1.0.26, readable-stream@~1.0.26-2:
   version "1.0.34"
   resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/readable-stream/-/readable-stream-1.0.34.tgz#125820e34bc842d2f2aaafafe4c2916ee32c157c"
   dependencies:
@@ -3337,11 +3370,10 @@ readable-stream@1.1, readable-stream@^1.0.33, readable-stream@^1.1.8, readable-s
     isarray "0.0.1"
     string_decoder "~0.10.x"
 
-readable-stream@^2.0.0, "readable-stream@^2.0.0 || ^1.1.13", readable-stream@^2.0.2, readable-stream@^2.0.4, readable-stream@^2.1.5:
-  version "2.2.2"
-  resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/readable-stream/-/readable-stream-2.2.2.tgz#a9e6fec3c7dda85f8bb1b3ba7028604556fc825e"
+readable-stream@^2.0.0, readable-stream@~2.0.0, readable-stream@~2.0.5:
+  version "2.0.6"
+  resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/readable-stream/-/readable-stream-2.0.6.tgz#8f90341e68a53ccc928788dacfcd11b36eb9b78e"
   dependencies:
-    buffer-shims "^1.0.0"
     core-util-is "~1.0.0"
     inherits "~2.0.1"
     isarray "~1.0.0"
@@ -3349,10 +3381,11 @@ readable-stream@^2.0.0, "readable-stream@^2.0.0 || ^1.1.13", readable-stream@^2.
     string_decoder "~0.10.x"
     util-deprecate "~1.0.1"
 
-readable-stream@~2.0.0, readable-stream@~2.0.5:
-  version "2.0.6"
-  resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/readable-stream/-/readable-stream-2.0.6.tgz#8f90341e68a53ccc928788dacfcd11b36eb9b78e"
+"readable-stream@^2.0.0 || ^1.1.13", readable-stream@^2.0.2, readable-stream@^2.0.4, readable-stream@^2.1.5:
+  version "2.2.2"
+  resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/readable-stream/-/readable-stream-2.2.2.tgz#a9e6fec3c7dda85f8bb1b3ba7028604556fc825e"
   dependencies:
+    buffer-shims "^1.0.0"
     core-util-is "~1.0.0"
     inherits "~2.0.1"
     isarray "~1.0.0"
@@ -3547,29 +3580,30 @@ request@~2.53.0:
     tough-cookie ">=0.12.0"
     tunnel-agent "~0.4.0"
 
-request@~2.67.0:
-  version "2.67.0"
-  resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/request/-/request-2.67.0.tgz#8af74780e2bf11ea0ae9aa965c11f11afd272742"
+request@~2.74.0:
+  version "2.74.0"
+  resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/request/-/request-2.74.0.tgz#7693ca768bbb0ea5c8ce08c084a45efa05b892ab"
   dependencies:
     aws-sign2 "~0.6.0"
-    bl "~1.0.0"
+    aws4 "^1.2.1"
+    bl "~1.1.2"
     caseless "~0.11.0"
     combined-stream "~1.0.5"
     extend "~3.0.0"
     forever-agent "~0.6.1"
-    form-data "~1.0.0-rc3"
-    har-validator "~2.0.2"
-    hawk "~3.1.0"
+    form-data "~1.0.0-rc4"
+    har-validator "~2.0.6"
+    hawk "~3.1.3"
     http-signature "~1.1.0"
     is-typedarray "~1.0.0"
     isstream "~0.1.2"
     json-stringify-safe "~5.0.1"
     mime-types "~2.1.7"
     node-uuid "~1.4.7"
-    oauth-sign "~0.8.0"
-    qs "~5.2.0"
+    oauth-sign "~0.8.1"
+    qs "~6.2.0"
     stringstream "~0.0.4"
-    tough-cookie "~2.2.0"
+    tough-cookie "~2.3.0"
     tunnel-agent "~0.4.1"
 
 requirejs@~2.1.11:
@@ -3580,7 +3614,7 @@ reserved-words@^0.1.1:
   version "0.1.1"
   resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/reserved-words/-/reserved-words-0.1.1.tgz#6f7c15e5e5614c50da961630da46addc87c0cef2"
 
-resolve@^1.1.6:
+resolve@^1.1.6, resolve@~1.1.0:
   version "1.1.7"
   resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/resolve/-/resolve-1.1.7.tgz#203114d82ad2c5ed9e8e0411b3932875e889e97b"
 
@@ -4358,7 +4392,7 @@ websocket-stream@^3.0.1:
     ws "^1.0.1"
     xtend "^4.0.0"
 
-which@^1.0.7, which@^1.1.1, which@^1.2.1, which@~1.2.2:
+which@^1.0.7, which@^1.1.1, which@^1.2.1, which@~1.2.10:
   version "1.2.12"
   resolved "https://devops.bt.siemens.com/artifactory/api/npm/npm-all/which/-/which-1.2.12.tgz#de67b5e450269f194909ef23ece4ebe416fa1192"
   dependencies:

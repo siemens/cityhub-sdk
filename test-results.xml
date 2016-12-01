@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <testsuites>
-  <testsuite name="PhantomJS 2.0.0 (Windows 7 0.0.0)" package="" timestamp="2016-12-01T08:14:05" id="0" hostname="MD1EWECC" tests="4" errors="0" failures="0" time="0.093">
+  <testsuite name="PhantomJS 2.0.0 (Windows 7 0.0.0)" package="" timestamp="2016-12-01T08:53:08" id="0" hostname="MD1EWECC" tests="4" errors="0" failures="0" time="0.082">
     <properties>
       <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.0.0 Safari/538.1"/>
     </properties>
-    <testcase name="should attach a list of sensors to the scope" time="0.052" classname="PhantomJS 2.0.0 (Windows 7 0.0.0).Controller: MainCtrl"/>
-    <testcase name="dummy test" time="0.014" classname="PhantomJS 2.0.0 (Windows 7 0.0.0).Controller: MapCtrl map test"/>
-    <testcase name="should ..." time="0.021" classname="PhantomJS 2.0.0 (Windows 7 0.0.0).Controller: MqttCtrl"/>
-    <testcase name="should ..." time="0.006" classname="PhantomJS 2.0.0 (Windows 7 0.0.0).Controller: RestCtrl"/>
+    <testcase name="should attach a list of sensors to the scope" time="0.04" classname="PhantomJS 2.0.0 (Windows 7 0.0.0).Controller: MainCtrl"/>
+    <testcase name="dummy test" time="0.013" classname="PhantomJS 2.0.0 (Windows 7 0.0.0).Controller: MapCtrl map test"/>
+    <testcase name="should ..." time="0.022" classname="PhantomJS 2.0.0 (Windows 7 0.0.0).Controller: MqttCtrl"/>
+    <testcase name="should ..." time="0.007" classname="PhantomJS 2.0.0 (Windows 7 0.0.0).Controller: RestCtrl"/>
     <system-out><![CDATA[PhantomJS 2.0.0 (Windows 7 0.0.0) WARN: 'map.controller: error initializing map: TypeError: undefined is not a constructor (evaluating 'map.getMinZoom()')'
 ,PhantomJS 2.0.0 (Windows 7 0.0.0) LOG: 'Loaded 0 POIs', []
 ,PhantomJS 2.0.0 (Windows 7 0.0.0) LOG: 'Added layer with 0 POIs to map.'
