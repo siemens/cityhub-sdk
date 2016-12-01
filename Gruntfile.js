@@ -150,12 +150,10 @@ module.exports = function(grunt) {
         config: '.jscsrc',
         preset: 'google',
         force: true,
-        esnext: false, // If you use ES6 http://jscs.info/overview.html#esnext
-        verbose: true, // If you need output with rule names http://jscs.info/overview.html#verbose
-        requireCurlyBraces: ['if'],
+        requireCurlyBraces: ['if', 'else', 'for', 'while'],
         reporter: 'checkstyle',
         reporterOutput: './jscs-results.xml',
-        excludeFiles: ['.*/**', 'dist/**', 'node_modules/**', 'bower_components/**', 'client/bower_components/**']
+        excludeFiles: ['.*/**', 'dist/**', 'node_modules/**', 'client/bower_components/**', 'client/components/static/**']
         //fix: true
       }
     },

@@ -72,12 +72,14 @@ angular.module('chSensorsApp')
         });
         // create layer
         var newLayer = new L.LayerGroup(markers);
-        if (map.hasLayer(cityhubLayer)) {
-          map.removeLayer(cityhubLayer);
+        if (map) {
+          if (map.hasLayer(cityhubLayer)) {
+            map.removeLayer(cityhubLayer);
+          }
+          cityhubLayer = newLayer;
+          map.addLayer(cityhubLayer);
+          console.log('Added layer with ' + pois.length + ' POIs to map.');
         }
-        cityhubLayer = newLayer;
-        map.addLayer(cityhubLayer);
-        console.log('Added layer with ' + pois.length + ' POIs to map.');
       }, function errorCallback(response) {
         // called asynchronously if an error occurs
         // or server returns response with an error status.
