@@ -19,7 +19,7 @@
     "connect-livereload": "0.5.3",
     "cron": "1.0.9",
     "debug": "2.2.0",
-    "ejs": "0.8.4",
+    "ejs": "2.5.5",
     "errorhandler": "1.4.3",
     "express": "4.13.4",
     "http-auth": "2.4.4",
